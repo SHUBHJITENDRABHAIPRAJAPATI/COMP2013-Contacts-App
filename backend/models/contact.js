@@ -29,5 +29,6 @@ const contactSchema = new Schema({
 });
 
 //Package and export the model
-const Contact = mongoose.model("Contact", contactSchema);
+const Contact = mongoose.model("Contact", contactSchema,"contacts");
+
 module.exports = Contact;
