@@ -9,7 +9,7 @@ const { DB_URI, SECRET_KEY } = process.env; //to grab variables from the dotenv 
 const cors = require("cors"); //For disabling default browser security
 const Contact = require("./models/contact"); //importing the model schema
 
-// adding lab-5 headers
+// adding lab-5 modules 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("./models/user"); //importing user model schema
@@ -25,7 +25,6 @@ mongoose
   .then(() => {
     server.listen(port, () => {
       console.log(`Database is connected\nServer is listening on ${port}`);
-      console.log(new Date(Date.now()));
     });
   })
   .catch((error) => console.log(error.message));
@@ -34,6 +33,7 @@ mongoose
 //Root route
 server.get("/", (request, response) => {
   response.send("Server is Live!");
+  response.send(new Date(Date.now()));
 });
 
 //To GET all the data from contacts collection
