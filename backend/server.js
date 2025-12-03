@@ -119,7 +119,7 @@ server.post("/register", async (request, response) => {
   const { username, password } = request.body;
   try{
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new UserActivation({
+    const newUser = new User({
       username,
       password: hashedPassword,
     });
