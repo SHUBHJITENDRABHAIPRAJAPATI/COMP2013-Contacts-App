@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import RegisterPage from "./Components/RegisterPage";
 import PageNotFound from "./Components/PageNotFound";
+import ContactsApp from "./Components/ContactsApp"; 
 import "./App.css";
 //import LoginPage from "./Components/LoginPage";
 //import PrivatePage from "./Components/PrivatePage";
@@ -22,15 +23,25 @@ function App() {
       <Router>
         <Routes>
           <Route element={<PrivateRoute />}>
-            <Route path="/private" element={<PrivatePage />} />
+           //route to connect db and then login to website
+            <Route path="/private" element={<PrivatePage />} />//private page
           </Route>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/not-authorized" element={<NotAuthorized />} />
-          <Route path="*" element={<PageNotFound />} />
+          //route to contacts app
+          <Route path="/contacts" element={<ContactsApp />} />
+
+          <Route path="/" element={<HomePage />} />//home page for contact card
+
+          <Route path="/register" element={<RegisterPage />} />//register page
+          <Route path="/login" element={<LoginPage />} />//login page
+          <Route path="/not-authorized" element={<NotAuthorized />} />//not authorized page
+          <Route path="*" element={<PageNotFound />} />//page not found
+          
+
+
         </Routes>
       </Router>
+
+
     </>
   );
 }
